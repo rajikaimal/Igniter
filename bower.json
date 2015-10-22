@@ -1,0 +1,21 @@
+{
+  "name": "Igniter",
+  "authors": [
+    "Rajika <inbox.rajika@gmail.com>"
+  ],
+  "description": "Fuel station management application",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "material-design-lite": "~1.0.5"
+  }
+}
