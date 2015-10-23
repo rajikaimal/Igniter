@@ -2,7 +2,10 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
-	public function index() {
+	public function __construct() {
+        parent::__construct();
+    }
+    public function index() {
 
 		$this->load->helper(array('form', 'url'));
 	
@@ -20,7 +23,17 @@ class Login extends CI_Controller {
         }
         else
         {
-			redirect('igniter','refresh');
+            $username = $this->input->post('username');
+            $password = $this->input->post('password');
+            $this->load->model('login_model');
+            if($q = ($this->login_model->signIn($username,$password)) != NULL){
+                $_SESSION['loggedIn'] = $q;
+                var_dump($_SESSION['loggedIn']);
+                //redirect('igniter','refresh');
+            }
+            else{
+                redirect('login','refresh');
+            }
         }
 	}
 }
