@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Login extends CI_Controller {
 	public function __construct() {
         if(!isset($_SESSION['loggedIn'])){
-            redirect('login','refresh');
+            //redirect('login','refresh');
         }
         parent::__construct();
     }
@@ -21,7 +21,6 @@ class Login extends CI_Controller {
 
         if ($this->form_validation->run() == FALSE)
         {
-            $this->load->view('login/header');
 			$this->load->view('login/login');
         }
         else
