@@ -3,18 +3,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 	public function __construct() {
-        if(!isset($_SESSION['loggedIn'])){
-            //redirect('login','refresh');
-        }
         parent::__construct();
     }
     public function index() {
+        if(isset($_SESSION['loggedIn'])){
+            redirect('home','refresh');    
+        }
 
 		$this->load->helper(array('form', 'url'));
 	
 		$this->load->library('form_validation');
 
-        $this->form_validation->set_rules('username', 'Username', 'required');
+        $this->form_validation->set_rules('email', 'Email', 'required');
         $this->form_validation->set_rules('password', 'Password', 'required',
                 array('required' => 'You must provide a %s.')
         );
@@ -25,12 +25,12 @@ class Login extends CI_Controller {
         }
         else
         {
-            $username = $this->input->post('username');
+            $email = $this->input->post('email');
             $password = $this->input->post('password');
             $this->load->model('login_model');
-            if($q = ($this->login_model->signIn($username,$password)) != NULL){
+            if($q = ($this->login_model->signIn($email,$password)) != NULL){
                 $_SESSION['loggedIn'] = $q;
-                redirect('igniter','refresh');
+                redirect('home','refresh');
             }
             else{
                 redirect('login','refresh');
