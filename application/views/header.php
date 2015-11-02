@@ -291,6 +291,9 @@
                         <li>
                             <a href="stocks"><i class="fa fa-dashboard fa-fw"></i> Expense</a>
                         </li>
+                        <li>
+                            <a href="stocks"><i class="fa fa-dashboard fa-fw"></i> Employees</a>
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
