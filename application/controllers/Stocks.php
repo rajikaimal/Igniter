@@ -14,4 +14,17 @@ class Stocks extends CI_Controller {
 		$this->load->view('footer');
 		//$this->load->view('footer');
 	}
+	public function readings() {
+        $petrol = $_POST['petrol'];
+    	$diesel = $_POST['diesel'];
+
+    	$readings['realReadingPetrol'] = 150;
+    	$readings['realReadingDiesel'] = 250;
+    	$readings['petrolStock'] = 100;
+    	$readings['dieselStock'] = 200;
+
+    	$this->load->view('header');    
+    	$this->load->view('stocks/readings',$readings);    
+    	$this->load->view('footer'); 
+    }
 }

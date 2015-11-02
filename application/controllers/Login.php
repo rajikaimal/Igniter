@@ -33,7 +33,8 @@ class Login extends CI_Controller {
                 redirect('home','refresh');
             }
             else{
-                redirect('login','refresh');
+                $err['title'] = "Please check your credentials";
+                $this->load->view('login/login',$err);
             }
         }
 	}

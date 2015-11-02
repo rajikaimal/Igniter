@@ -255,7 +255,7 @@
                         <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
                         </li>
                         <li class="divider"></li>
-                        <li><a href="logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        <li><a href="<?php echo base_url(); ?>logout"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -279,7 +279,7 @@
                             <!-- /input-group -->
                         </li>
                         <li>
-                            <a href="stocks"><i class="fa fa-dashboard fa-fw"></i> Stocks</a>
+                            <a href="<?php echo base_url() ?>stocks"><i class="fa fa-dashboard fa-fw"></i> Stocks</a>
                         </li>
                         <li>
                             <a href="stocks"><i class="fa fa-dashboard fa-fw"></i> Clients</a>
