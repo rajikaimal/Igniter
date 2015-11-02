@@ -1,60 +1,19 @@
-</div>
-  </main>
-</div>
-<footer class="mdl-mega-footer">
-  <div class="mdl-mega-footer__middle-section">
-
-    <div class="mdl-mega-footer__drop-down-section">
-      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-      <h1 class="mdl-mega-footer__heading">Features</h1>
-      <ul class="mdl-mega-footer__link-list">
-        <li><a href="#">About</a></li>
-        <li><a href="#">Terms</a></li>
-        <li><a href="#">Partners</a></li>
-        <li><a href="#">Updates</a></li>
-      </ul>
     </div>
 
-    <div class="mdl-mega-footer__drop-down-section">
-      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-      <h1 class="mdl-mega-footer__heading">Details</h1>
-      <ul class="mdl-mega-footer__link-list">
-        <li><a href="#">Specs</a></li>
-        <li><a href="#">Tools</a></li>
-        <li><a href="#">Resources</a></li>
-      </ul>
-    </div>
+    <script src="<?php echo base_url(); ?>bower_components/jquery/dist/jquery.min.js"></script>
 
-    <div class="mdl-mega-footer__drop-down-section">
-      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-      <h1 class="mdl-mega-footer__heading">Technology</h1>
-      <ul class="mdl-mega-footer__link-list">
-        <li><a href="#">How it works</a></li>
-        <li><a href="#">Patterns</a></li>
-        <li><a href="#">Usage</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Contracts</a></li>
-      </ul>
-    </div>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?php echo base_url(); ?>bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
-    <div class="mdl-mega-footer__drop-down-section">
-      <input class="mdl-mega-footer__heading-checkbox" type="checkbox" checked>
-      <h1 class="mdl-mega-footer__heading">FAQ</h1>
-      <ul class="mdl-mega-footer__link-list">
-        <li><a href="#">Questions</a></li>
-        <li><a href="#">Answers</a></li>
-        <li><a href="#">Contact us</a></li>
-      </ul>
-    </div>
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="<?php echo base_url(); ?>bower_components/metisMenu/dist/metisMenu.min.js"></script>
 
-  </div>
+    <!-- Morris Charts JavaScript -->
+    <script src="<?php echo base_url(); ?>bower_components/raphael/raphael-min.js"></script>
+    <script src="<?php echo base_url(); ?>bower_components/morrisjs/morris.min.js"></script>
+    <script src="<?php echo base_url(); ?>js/morris-data.js"></script>
 
-  <div class="mdl-mega-footer__bottom-section">
-    <div class="mdl-logo">Title</div>
-    <ul class="mdl-mega-footer__link-list">
-      <li><a href="#">Help</a></li>
-      <li><a href="#">Privacy & Terms</a></li>
-    </ul>
-  </div>
-
-</footer>
+    <!-- Custom Theme JavaScript -->
+    <script src="<?php echo base_url(); ?>dist/js/sb-admin-2.js"></script>
+</body>
+</html>

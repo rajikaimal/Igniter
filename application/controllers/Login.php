@@ -3,6 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Login extends CI_Controller {
 	public function __construct() {
+        if(!isset($_SESSION['loggedIn'])){
+            redirect('login','refresh');
+        }
         parent::__construct();
     }
     public function index() {
@@ -28,8 +31,7 @@ class Login extends CI_Controller {
             $this->load->model('login_model');
             if($q = ($this->login_model->signIn($username,$password)) != NULL){
                 $_SESSION['loggedIn'] = $q;
-                var_dump($_SESSION['loggedIn']);
-                //redirect('igniter','refresh');
+                redirect('igniter','refresh');
             }
             else{
                 redirect('login','refresh');
