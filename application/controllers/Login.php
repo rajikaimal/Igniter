@@ -28,8 +28,8 @@ class Login extends CI_Controller {
             $email = $this->input->post('email');
             $password = $this->input->post('password');
             $this->load->model('login_model');
-            if($q = ($this->login_model->signIn($email,$password)) != NULL){
-                $_SESSION['loggedIn'] = $q;
+            if($q = ($this->login_model->signIn($email,$password)) != false){
+                $_SESSION['loggedIn'] = $email;
                 redirect('home','refresh');
             }
             else{

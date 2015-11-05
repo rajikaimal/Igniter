@@ -27,4 +27,30 @@ class Stocks extends CI_Controller {
     	$this->load->view('stocks/readings',$readings);    
     	$this->load->view('footer'); 
     }
+    public function saveReadings(){
+    	$this->load->model('stocks_model');
+  		
+  		$readings['petrol'] = $_POST['readingPetrol'];
+  		$readings['diesel'] = $_POST['readingDiesel'];
+
+  		$stocks['petrol'] = $_POST['stocKPetrol'];
+  		$stocks['diesel'] = $_POST['stockDiesel'];
+
+  		$orders['petrol'] = $_POST['petrolOrder'];
+  		$orders['diesel'] = $_POST['dieselOrder'];
+
+   		$this->stocks_model->saveReadings($readings,$stocks,$orders);
+
+		redirect('history','refresh');
+    }
+    public function history() {
+    	$this->load->model('stocks_model');
+    	$dataPetrol = $this->stocks_model->loadHistoryPetrol();
+    	$dataDiesel = $this->stocks_model->loadHistoryDiesel();
+    	$q['dataPetrol'] = $dataPetrol;
+    	$q['dataDiesel'] = $dataDiesel;
+    	$this->load->view('header');
+   		$this->load->view('stocks/history',$q);
+    	$this->load->view('footer');
+    }
 }

@@ -14,6 +14,7 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
+                            <form method="post" action="saveReadings">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
@@ -26,15 +27,23 @@
                                     <tbody>
                                         <tr class="odd gradeX">
                                             <td>Petrol</td>
-                                            <td><?php echo $realReadingPetrol; ?></td>
-                                            <td><?php echo $petrolStock; ?></td>
-                                            <td class="center">4</td>
+                                            <td><input type="number" name="readingPetrol" class="form-control" value="<?php echo $realReadingPetrol; ?>"></td>
+                                            <td><input type="number" name="stocKPetrol" class="form-control" value="<?php echo $petrolStock; ?>"></td>
+                                            <td class="center"><select class="form-control" name="petrolOrder">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select></td>
                                         </tr>
                                         <tr class="odd gradeX">
                                             <td>Diesel</td>
-                                            <td><?php echo $realReadingDiesel; ?></td>
-                                            <td><?php echo $dieselStock; ?></td>
-                                            <td class="center">4</td>
+                                            <td><input type="number" name="readingDiesel" class="form-control" value="<?php echo $realReadingDiesel; ?>"></td>
+                                            <td><input type="number" name="stockDiesel" class="form-control" value="<?php echo $dieselStock; ?>"></td>
+                                            <td class="center"><select class="form-control" name="dieselOrder">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                            </select></td>
                                         </tr>
                                         
                                     </tbody>
@@ -49,9 +58,6 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
-            
-            <!-- /.row -->
-            
-            <!-- /.row -->
-            
+            <button type="submit" class="btn btn-default">Save</button>    
+            </form>
         </div>
