@@ -282,7 +282,7 @@
                             <a href="<?php echo base_url() ?>stocks"><i class="fa fa-dashboard fa-fw"></i> Stocks</a>
                         </li>
                         <li>
-                            <a href="stocks"><i class="fa fa-dashboard fa-fw"></i> Clients</a>
+                            <a href="<?php echo base_url() ?>clients"><i class="fa fa-dashboard fa-fw"></i> Clients</a>
                         </li>
                         <li>
                             <a href="stocks"><i class="fa fa-dashboard fa-fw"></i> Income</a>

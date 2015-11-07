@@ -10,7 +10,8 @@ class Stocks extends CI_Controller {
             redirect('login','refresh');    
         }
 		$this->load->view('header');
-		$this->load->view('stocks/index');
+		$this->load->view('stocks/row');
+    $this->load->view('stocks/index');
 		$this->load->view('footer');
 		//$this->load->view('footer');
 	}
@@ -41,7 +42,7 @@ class Stocks extends CI_Controller {
 
    		$this->stocks_model->saveReadings($readings,$stocks,$orders);
 
-		redirect('history','refresh');
+  		redirect('history','refresh');
     }
     public function history() {
     	$this->load->model('stocks_model');
@@ -52,5 +53,37 @@ class Stocks extends CI_Controller {
     	$this->load->view('header');
    		$this->load->view('stocks/history',$q);
     	$this->load->view('footer');
+    }
+    public function viewLubricants() {
+      $this->load->model('stocks_model');
+      $q = $this->stocks_model->loadLubricants();
+      $data['q'] = $q;
+      $this->load->view('header');
+      $this->load->view('stocks/row');
+      $this->load->view('stocks/viewlubricants',$data);
+      $this->load->view('footer');
+    }
+    public function lubricants() {
+      $this->load->view('header');
+      $this->load->view('stocks/row');
+      $this->load->view('stocks/lubricants');
+      $this->load->view('footer'); 
+    }
+    public function addLubricant() {
+      $name = $_POST['name'];
+      $amount = $_POST['amount'];
+      $supplier = $_POST['supplier'];
+
+      $this->load->model('stocks_model');
+      if($this->stocks_model->addLubricant($name,$amount,$supplier)) {
+        self::viewLubricants();
+      }
+    }
+    public function removeLubricant() {
+      $name = $_GET['name'];
+      $this->load->model('stocks_model');
+      if($this->stocks_model->removeLubricant($name)) {
+        self::viewLubricants();  
+      } 
     }
 }

@@ -30,6 +30,17 @@ class Stocks_model extends CI_Model {
 			return false;
 		}
 	}
+	public function loadLubricants() {
+		$this->db->select('*');
+        $this->db->from('lubricants');
+        $query = $this->db->get();
+		if($query) {
+			return $query;
+		}
+		else {
+			return false;
+		}
+	}
 	public function loadHistoryDiesel() {
 		$this->db->select('*');
         $this->db->from('oil_stock_readings');
@@ -42,6 +53,22 @@ class Stocks_model extends CI_Model {
 			return false;
 		}
 	}	
+	public function addLubricant($name,$amount,$supplier) {
+		if($this->db->query("insert into lubricants VALUES ('$name','$amount','$supplier')")) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	public function removeLubricant($name) {
+		if($this->db->query("delete from lubricants where name='$name'")) {
+			return true;
+		}
+		else {
+			return false;
+		}	
+	}
 }
 
 ?>
