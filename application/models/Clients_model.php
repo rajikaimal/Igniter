@@ -60,6 +60,14 @@ class Clients_model extends CI_Model {
 			return false;
 		}
 	}
+	public function updateStatusPay($name) {
+		if($this->db->query("update client_loans set status='paid' where name='$name' AND MONTH(`Date`)=MONTH(NOW())")) {
+			return true;
+		}
+		else{
+			return false;
+		}	
+	}
 	public function removeLoan($id) {
 		if($this->db->query("delete from client_loans where id='$id'")) {
 			return true;
@@ -69,7 +77,7 @@ class Clients_model extends CI_Model {
 		}	
 	}
 	public function summary() {
-		if($data = $this->db->query("select name,date,(SUM(amount)) as amount from client_loans where MONTH(`Date`)=MONTH(NOW()) 
+		if($data = $this->db->query("select id,name,date,(SUM(amount)) as amount,status from client_loans where MONTH(`Date`)=MONTH(NOW()) 
 			and YEAR(`Date`)=YEAR(NOW()) group by name")) {
 			return $data;
 		}

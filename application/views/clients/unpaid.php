@@ -26,7 +26,7 @@
                                             <td class="text-center"><?php echo $row->name; ?></td>
                                             <td class="text-center"><?php echo $row->amount; ?></td>
                                             <td class="text-center"><?php echo $row->date; ?></td>
-                                            <td class="text-center"><a class="btn btn-success" href="<?php echo base_url(); ?>clients/updateStatus?id=<?php echo $row->id ?>">Paid</a></td>
+                                            <!-- <td class="text-center"><a class="btn btn-success" href="<?php echo base_url(); ?>clients/updateStatus?id=<?php echo $row->id ?>">Paid</a></td> -->
                                             <td class="text-center"><a class="btn btn-danger" href="<?php echo base_url(); ?>clients/removeLoan?id=<?php echo $row->id ?>">Remove</a></td>
                                         </tr>
                                         <?php endforeach; ?>

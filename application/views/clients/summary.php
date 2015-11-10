@@ -11,7 +11,6 @@
                                     <thead>
                                         <tr>
                                             <th class="text-center">Name</th>
-                                            <th class="text-center">Date</th>
                                             <th class="text-center">Amount(Rs)</th>
                                             
                                         </tr>
@@ -24,14 +23,16 @@
                                         <form method="post" action="<?php echo base_url();?>clients/remove">
                                         <tr class="odd gradeX">
                                             <td class="text-center"><?php echo $row->name; ?></td>
-                                            <td class="text-center"><?php echo $row->date; ?></td>
                                             <td class="text-center"><?php echo $row->amount; ?></td>
+                                            <?php if($row->status != "paid"): ?>
+                                            <td class="text-center"><a class="btn btn-success" href="<?php echo base_url(); ?>clients/updateStatusPay?name=<?php echo $row->name; ?>">Paid</a></td>
+                                            <?php endif; ?>
                                             <?php $count = $count + $row->amount; ?>
                                         </tr>
                                             <?php endforeach; ?>
                                         <tr>
                                             <td class="text-center"><b>Total(Rs)</b></td>
-                                            <td></td>
+                                            
                                             <td class="text-center"><b><?php echo $count; ?></b></td>
                                         </tr>
                                         

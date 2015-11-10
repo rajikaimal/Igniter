@@ -92,6 +92,15 @@ class Clients extends CI_Controller {
 			redirect('clients/summary','refresh');    
 		}
 	}
+	public function updateStatusPay() {
+		$name = $_GET['name'];
+
+		$this->load->model('clients_model');
+		if($this->clients_model->updateStatusPay($name)) {
+			redirect('clients/summary','refresh');    
+		}
+
+	}
 	public function removeLoan() {
 		$id = $_GET['id'];
 		$this->load->model('clients_model');
