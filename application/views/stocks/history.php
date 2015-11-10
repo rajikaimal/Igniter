@@ -14,14 +14,15 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
+                            <h3>Petrol</h3>
                             <form method="post" action="saveReadings">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Date</th>
-                                            <th>Reading</th>
-                                            <th>Current stock</th>
-                                            <th>Order</th>
+                                            <th class="text-center">Date</th>
+                                            <th class="text-center">Reading</th>
+                                            <th class="text-center">Current stock</th>
+                                            <th class="text-center">Order</th>
                                             <!-- <th></th> -->
                                             <!-- <th></th> -->
                                         </tr>
@@ -32,10 +33,10 @@
                                             foreach ($dataPetrol->result() as $row):
                                         ?>
                                         <tr class="odd gradeX">
-                                            <td><?php echo $row->date; ?></td>
-                                            <td><?php echo $row->reading; ?></td>
-                                            <td><?php echo $row->stock; ?></td>
-                                            <td class="center"><?php echo $row->order_amount; ?></td>
+                                            <td class="text-center"><?php echo $row->date; ?></td>
+                                            <td class="text-center"><?php echo $row->reading; ?></td>
+                                            <td class="text-center"><?php echo $row->stock; ?></td>
+                                            <td class="text-center"><?php echo $row->order_amount; ?></td>
                                             <!-- <td><input type="button" class="btn btn-success" value="Edit"></td> -->
                                             <!-- <td><input type="button" class="btn btn-danger" value="Remove"></td> -->
                                         </tr>
@@ -45,14 +46,15 @@
                             </div>
                             <!-- /.table-responsive -->
                             <div class="dataTable_wrapper">
+                            <h3>Diesel</h3>
                             <form method="post" action="saveReadings">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Date</th>
-                                            <th>Reading</th>
-                                            <th>Current stock</th>
-                                            <th>Order</th>
+                                            <th class="text-center">Date</th>
+                                            <th class="text-center">Reading</th>
+                                            <th class="text-center">Current stock</th>
+                                            <th class="text-center">Order</th>
                                             <!-- <th></th> -->
                                             <!-- <th></th> -->
                                         </tr>
@@ -63,10 +65,10 @@
                                             foreach ($dataDiesel->result() as $row):
                                         ?>
                                         <tr class="odd gradeX">
-                                            <td><?php echo $row->date; ?></td>
-                                            <td><?php echo $row->reading; ?></td>
-                                            <td><?php echo $row->stock; ?></td>
-                                            <td class="center"><?php echo $row->order_amount; ?></td>
+                                            <td class="text-center"><?php echo $row->date; ?></td>
+                                            <td class="text-center"><?php echo $row->reading; ?></td>
+                                            <td class="text-center"><?php echo $row->stock; ?></td>
+                                            <td class="text-center"><?php echo $row->order_amount; ?></td>
                                             <!-- <td><input type="button" class="btn btn-success" value="Edit"></td> -->
                                             <!-- <td><input type="button" class="btn btn-danger" value="Remove"></td> -->
                                         </tr>

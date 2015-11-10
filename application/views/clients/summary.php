@@ -11,23 +11,30 @@
                                     <thead>
                                         <tr>
                                             <th class="text-center">Name</th>
-                                            <th class="text-center">Amount</th>
-                                            <th class="text-center">Supplier</th>
-                                            <th class="text-center"></th>
+                                            <th class="text-center">Date</th>
+                                            <th class="text-center">Amount(Rs)</th>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php 
+                                            $count = 0;
                                            foreach ($q->result() as $row):
                                         ?>
                                         <form method="post" action="<?php echo base_url();?>clients/remove">
                                         <tr class="odd gradeX">
                                             <td class="text-center"><?php echo $row->name; ?></td>
+                                            <td class="text-center"><?php echo $row->date; ?></td>
                                             <td class="text-center"><?php echo $row->amount; ?></td>
-                                            <td class="text-center"><?php echo $row->supplier; ?></td>
-                                            <td class="text-center"><a class="btn btn-danger" href="<?php echo base_url(); ?>stocks/removeLubricant?name=<?php echo $row->name ?>">Remove</a></td>
+                                            <?php $count = $count + $row->amount; ?>
                                         </tr>
-                                        <?php endforeach; ?>
+                                            <?php endforeach; ?>
+                                        <tr>
+                                            <td class="text-center"><b>Total(Rs)</b></td>
+                                            <td></td>
+                                            <td class="text-center"><b><?php echo $count; ?></b></td>
+                                        </tr>
+                                        
                                     </tbody>
                                 </table>    
                                 </div>

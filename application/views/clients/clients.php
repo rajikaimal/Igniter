@@ -10,10 +10,10 @@
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Phone</th>
-                                            <th>Organization</th>
-                                            <th></th>
+                                            <th class="text-center">Name</th>
+                                            <th class="text-center">Phone</th>
+                                            <th class="text-center">Organization</th>
+                                            <th class="text-center"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -22,10 +22,10 @@
                                         ?>
                                         <form method="post" action="<?php echo base_url();?>clients/remove">
                                         <tr class="odd gradeX">
-                                            <td><?php echo $row->name; ?></td>
-                                            <td><?php echo $row->phone; ?></td>
-                                            <td><?php echo $row->organization; ?></td>
-                                            <td><a class="btn btn-danger" href="<?php echo base_url(); ?>clients/remove?name=<?php echo $row->name ?>&phone=<?php echo $row->phone ?>">Remove</a></td>
+                                            <td class="text-center"><?php echo $row->name; ?></td>
+                                            <td class="text-center"><?php echo $row->phone; ?></td>
+                                            <td class="text-center"><?php echo $row->organization; ?></td>
+                                            <td class="text-center"><a class="btn btn-danger" href="<?php echo base_url(); ?>clients/remove?name=<?php echo $row->name ?>&phone=<?php echo $row->phone ?>">Remove</a></td>
                                         </tr>
                                         <?php endforeach; ?>
                                     </tbody>

@@ -2,7 +2,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            
+                            <span><a href="<?php echo base_url();?>clients/summary">Summary of the month</a></span>
                         </div>
                         <div class="panel-body">
                             <div class="row">
@@ -12,8 +12,9 @@
                                         <tr>
                                             <th class="text-center">Name</th>
                                             <th class="text-center">Amount</th>
-                                            <th class="text-center">Supplier</th>
-                                            <th class="text-center"></th>
+                                            <th class="text-center">Date</th>
+                                            <th></th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -24,8 +25,9 @@
                                         <tr class="odd gradeX">
                                             <td class="text-center"><?php echo $row->name; ?></td>
                                             <td class="text-center"><?php echo $row->amount; ?></td>
-                                            <td class="text-center"><?php echo $row->supplier; ?></td>
-                                            <td class="text-center"><a class="btn btn-danger" href="<?php echo base_url(); ?>stocks/removeLubricant?name=<?php echo $row->name ?>">Remove</a></td>
+                                            <td class="text-center"><?php echo $row->date; ?></td>
+                                            <td class="text-center"><a class="btn btn-success" href="<?php echo base_url(); ?>clients/updateStatus?id=<?php echo $row->id ?>">Paid</a></td>
+                                            <td class="text-center"><a class="btn btn-danger" href="<?php echo base_url(); ?>clients/removeLoan?id=<?php echo $row->id ?>">Remove</a></td>
                                         </tr>
                                         <?php endforeach; ?>
                                     </tbody>
