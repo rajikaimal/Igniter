@@ -285,13 +285,13 @@
                             <a href="<?php echo base_url() ?>clients"><i class="fa fa-dashboard fa-fw"></i> Clients</a>
                         </li>
                         <li>
+                            <a href="<?php echo base_url() ?>employees"><i class="fa fa-dashboard fa-fw"></i> Employees</a>
+                        </li>
+                        <li>
                             <a href="stocks"><i class="fa fa-dashboard fa-fw"></i> Income</a>
                         </li>
                         <li>
                             <a href="stocks"><i class="fa fa-dashboard fa-fw"></i> Expense</a>
-                        </li>
-                        <li>
-                            <a href="stocks"><i class="fa fa-dashboard fa-fw"></i> Employees</a>
                         </li>
                     </ul>
                 </div>
