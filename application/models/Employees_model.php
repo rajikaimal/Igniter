@@ -45,25 +45,28 @@ class Employees_model extends CI_Model {
 			return false;
 		}
 	}
-	public function unpaidLoans() {
-		if($data = $this->db->query("select * from client_loans where status='unpaid'")) {
+	public function setAttendancePresent($name) {
+		$date = Date('Y-m-d');
+		if($data = $this->db->query("insert into attendance (name,attendance,date) VALUES ('$name','present','$date')")) {
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public function setAttendanceAbsent($name) {
+		$date = Date('Y-m-d');
+		if($data = $this->db->query("insert into attendance (name,attendance,date) VALUES ('$name','absent','$date')")) {
+			return true;
+		}
+		else{
+			return false;
+		}
+	}
+	public function loadAttendance() {
+		$date = Date('Y-m-d');
+		if($data = $this->db->query("select * from attendance where date='$date'")) {
 			return $data;
-		}
-		else{
-			return false;
-		}
-	}
-	public function updateStatus($id) {
-		if($this->db->query("update client_loans set status='paid' where id='$id'")) {
-			return true;
-		}
-		else{
-			return false;
-		}
-	}
-	public function updateStatusPay($name) {
-		if($this->db->query("update client_loans set status='paid' where name='$name' AND MONTH(`Date`)=MONTH(NOW())")) {
-			return true;
 		}
 		else{
 			return false;

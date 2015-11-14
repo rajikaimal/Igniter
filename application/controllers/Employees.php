@@ -72,11 +72,27 @@ class Employees extends CI_Controller {
 		$this->load->model('employees_model');
         if($q = $this->employees_model->loadEmployeeDetails()) {
         	$data['q'] = $q;
-
+        	
         	$this->load->view('header');
 			$this->load->view('Employees/row');
-			$this->load->view('Employees/view',$data);
+			$this->load->view('Employees/attendance',$data);
 			$this->load->view('footer');
         }
+	}
+	public function setAttendancePresent() {
+		$name = $_GET['name'];
+
+		$this->load->model('employees_model');
+		if($q = $this->employees_model->setAttendancePresent($name)) {
+			self::index();
+		}
+	}
+	public function setAttendanceAbsent() {
+		$name = $_GET['name'];
+
+		$this->load->model('employees_model');
+		if($q = $this->employees_model->setAttendanceAbsent($name)) {
+			self::index();
+		}
 	}
 }
