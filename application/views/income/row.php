@@ -2,7 +2,7 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Clients</h1>
+                    <h1 class="page-header">Income</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -18,13 +18,13 @@
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"></div>
-                                    <div>Add</div>
+                                    <div>Daily Sale</div>
                                 </div>
                             </div>
                         </div>
-                        <a href="<?php echo base_url(); ?>clients/add">
+                        <a href="<?php echo base_url(); ?>income/dailySale">
                             <div class="panel-footer">
-                                <span class="pull-left">Add new clients</span>
+                                <span class="pull-left">Add new entry</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>

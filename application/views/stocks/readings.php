@@ -20,6 +20,7 @@
                                         <tr>
                                             <th>Oil type</th>
                                             <th>Reading</th>
+                                            <th>Testing</th>
                                             <th>Current stock</th>
                                             <th>Order</th>
                                         </tr>
@@ -28,6 +29,7 @@
                                         <tr class="odd gradeX">
                                             <td>Petrol</td>
                                             <td><input type="number" name="readingPetrol" class="form-control" value="<?php echo $realReadingPetrol; ?>"></td>
+                                            <td><input type="number" name="testingPetrol" class="form-control" value=""></td>
                                             <td><input type="number" name="stocKPetrol" class="form-control" value="<?php echo $petrolStock; ?>"></td>
                                             <td class="center"><select class="form-control" name="petrolOrder">
                                                 <option>1</option>
@@ -38,6 +40,7 @@
                                         <tr class="odd gradeX">
                                             <td>Diesel</td>
                                             <td><input type="number" name="readingDiesel" class="form-control" value="<?php echo $realReadingDiesel; ?>"></td>
+                                            <td><input type="number" name="testingDiesel" class="form-control" value=""></td>
                                             <td><input type="number" name="stockDiesel" class="form-control" value="<?php echo $dieselStock; ?>"></td>
                                             <td class="center"><select class="form-control" name="dieselOrder">
                                                 <option>1</option>

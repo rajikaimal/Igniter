@@ -21,6 +21,7 @@
                                         <tr>
                                             <th class="text-center">Date</th>
                                             <th class="text-center">Reading</th>
+                                            <th class="text-center">Testing</th>
                                             <th class="text-center">Current stock</th>
                                             <th class="text-center">Order</th>
                                             <!-- <th></th> -->
@@ -35,6 +36,7 @@
                                         <tr class="odd gradeX">
                                             <td class="text-center"><?php echo $row->date; ?></td>
                                             <td class="text-center"><?php echo $row->reading; ?></td>
+                                            <td class="text-center"><?php echo $row->testing; ?></td>
                                             <td class="text-center"><?php echo $row->stock; ?></td>
                                             <td class="text-center"><?php echo $row->order_amount; ?></td>
                                             <!-- <td><input type="button" class="btn btn-success" value="Edit"></td> -->
@@ -53,6 +55,7 @@
                                         <tr>
                                             <th class="text-center">Date</th>
                                             <th class="text-center">Reading</th>
+                                            <th class="text-center">Testing</th>
                                             <th class="text-center">Current stock</th>
                                             <th class="text-center">Order</th>
                                             <!-- <th></th> -->
@@ -67,6 +70,7 @@
                                         <tr class="odd gradeX">
                                             <td class="text-center"><?php echo $row->date; ?></td>
                                             <td class="text-center"><?php echo $row->reading; ?></td>
+                                            <td class="text-center"><?php echo $row->testing; ?></td>
                                             <td class="text-center"><?php echo $row->stock; ?></td>
                                             <td class="text-center"><?php echo $row->order_amount; ?></td>
                                             <!-- <td><input type="button" class="btn btn-success" value="Edit"></td> -->

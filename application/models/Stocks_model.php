@@ -3,20 +3,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Stocks_model extends CI_Model {
 				
-	public function saveReadings($readings,$stocks,$orders) {
+	public function saveReadings($readings,$stocks,$orders,$testing) {
 		$date = date("Y-m-d");
 		$readings1 = $readings['petrol'];
 		$stocks1  = $stocks['petrol'];
 		$orders1 = $orders['petrol'];
+		$testing1 = $testing['petrol'];
 		$enteredBy = $_SESSION['loggedIn'];
-		$this->db->query("insert into oil_stock_readings VALUES ('$date','petrol','$readings1','$stocks1','$orders1','$enteredBy')");
+		$this->db->query("insert into oil_stock_readings VALUES ('$date','petrol','$readings1','$stocks1','$testing1','$orders1','$enteredBy')");
 		
 		$date = date("Y-m-d");
 		$readings2 = $readings['diesel'];
 		$stocks2  = $stocks['diesel'];
 		$orders2 = $orders['diesel'];
+		$testing1 = $testing['diesel'];
 		$enteredBy = $_SESSION['loggedIn'];
-		$this->db->query("insert into oil_stock_readings VALUES ('$date','diesel','$readings2','$stocks2','$orders2','$enteredBy')");	
+		$this->db->query("insert into oil_stock_readings VALUES ('$date','diesel','$readings2','$stocks2','$testing1','$orders2','$enteredBy')");	
 	}
 	public function loadHistoryPetrol() {
 		$query = $this->db->query("select * from oil_stock_readings where oil='petrol' AND MONTH(`date`)=MONTH(NOW())");

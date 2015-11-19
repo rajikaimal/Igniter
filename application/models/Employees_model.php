@@ -72,6 +72,14 @@ class Employees_model extends CI_Model {
 			return false;
 		}	
 	}
+	public function loadAttendanceDetails() {
+		if($data = $this->db->query("select * from attendance where MONTH(`date`)=MONTH(NOW())")) {
+			return $data;
+		}
+		else{
+			return false;
+		}	
+	}
 	public function removeLoan($id) {
 		if($this->db->query("delete from client_loans where id='$id'")) {
 			return true;
@@ -88,6 +96,15 @@ class Employees_model extends CI_Model {
 		else{
 			return false;
 		}	
+	}
+	public function addPayment($name,$amount,$date) {
+		$added_by = $_SESSION['loggedIn'];
+		if($data = $this->db->query("insert into employee_payments (emp_name,date,amount,added_by) VALUES ('$name','$date','$amount','$added_by')")) {
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 }
 

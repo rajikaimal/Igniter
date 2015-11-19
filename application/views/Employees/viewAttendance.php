@@ -10,8 +10,8 @@
                                     <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
+                                            <th class="text-center">Date</th>
                                             <th class="text-center">Name</th>
-                                            <th class="text-center"></th>
                                             <th class="text-center"></th>
                                         </tr>
                                     </thead>
@@ -20,9 +20,9 @@
                                            foreach ($q->result() as $row):
                                         ?>
                                         <tr class="odd gradeX">
+                                            <td class="text-center"><?php echo $row->date; ?></td>
                                             <td class="text-center"><?php echo $row->name; ?></td>
-                                            <td class="text-center"><a class="btn btn-success" href="<?php echo base_url();?>employees/setAttendancePresent?name=<?php echo $row->name; ?>">Present</a></td>
-                                            <td class="text-center"><a class="btn btn-danger" href="<?php echo base_url();?>employees/setAttendanceAbsent?name=<?php echo $row->name; ?>">Absent</a></td>
+                                            <td class="text-center"><?php echo $row->attendance; ?></td>
                                         </tr>
                                         <?php endforeach; ?>
                                     </tbody>

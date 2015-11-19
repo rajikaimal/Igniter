@@ -79,6 +79,17 @@ class Employees extends CI_Controller {
 			$this->load->view('footer');
         }
 	}
+	public function viewAttendance() {
+		$this->load->model('employees_model');
+        if($q = $this->employees_model->loadAttendanceDetails()) {
+        	$data['q'] = $q;
+        	
+        	$this->load->view('header');
+			$this->load->view('Employees/row');
+			$this->load->view('Employees/viewAttendance',$data);
+			$this->load->view('footer');
+        }	
+	}
 	public function setAttendancePresent() {
 		$name = $_GET['name'];
 
@@ -94,5 +105,32 @@ class Employees extends CI_Controller {
 		if($q = $this->employees_model->setAttendanceAbsent($name)) {
 			self::index();
 		}
+	}
+	//not finished yet attendance module
+	public function payments() {
+		$this->load->model('employees_model');
+        if($q = $this->employees_model->loadEmployeeDetails()) {
+        	$data['q'] = $q;
+        	
+        	$this->load->view('header');
+			$this->load->view('Employees/row');
+			$this->load->view('Employees/payments',$data);
+			$this->load->view('footer');
+        }
+	}
+	public function addPayment() {
+		$name = $_POST['name'];
+		$amount = $_POST['amount'];
+		$date = $_POST['date'];
+
+		$this->load->model('employees_model');
+        if($q = $this->employees_model->addPayment($name,$amount,$date)) {
+        	$data['q'] = $q;
+        	
+        	$this->load->view('header');
+			$this->load->view('Employees/row');
+			$this->load->view('Employees/payments',$data);
+			$this->load->view('footer');
+        }	
 	}
 }

@@ -40,9 +40,12 @@ class Stocks extends CI_Controller {
   		$orders['petrol'] = $_POST['petrolOrder'];
   		$orders['diesel'] = $_POST['dieselOrder'];
 
-   		$this->stocks_model->saveReadings($readings,$stocks,$orders);
+      $testing['petrol'] = $_POST['testingPetrol'];
+      $testing['diesel'] = $_POST['testingDiesel'];
+ 
+   		$this->stocks_model->saveReadings($readings,$stocks,$orders,$testing);
 
-  		redirect('history','refresh');
+  		redirect('stocks/history','refresh');
     }
     public function history() {
     	$this->load->model('stocks_model');
@@ -62,6 +65,9 @@ class Stocks extends CI_Controller {
       $this->load->view('stocks/row');
       $this->load->view('stocks/viewlubricants',$data);
       $this->load->view('footer');
+    }
+    public function newLubricantStocks() {
+
     }
     public function lubricants() {
       $this->load->view('header');
