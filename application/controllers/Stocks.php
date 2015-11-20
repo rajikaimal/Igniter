@@ -54,7 +54,8 @@ class Stocks extends CI_Controller {
     	$q['dataPetrol'] = $dataPetrol;
     	$q['dataDiesel'] = $dataDiesel;
     	$this->load->view('header');
-   		$this->load->view('stocks/history',$q);
+   		$this->load->view('stocks/row');
+      $this->load->view('stocks/history',$q);
     	$this->load->view('footer');
     }
     public function viewLubricants() {
