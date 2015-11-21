@@ -10,7 +10,7 @@ class Stocks_model extends CI_Model {
 		$orders1 = $orders['petrol'];
 		$testing1 = $testing['petrol'];
 		$enteredBy = $_SESSION['loggedIn'];
-		$this->db->query("insert into oil_stock_readings VALUES ('$date','petrol','$readings1','$stocks1','$testing1','$orders1','$enteredBy')");
+		$this->db->query("insert into oil_stock_readings VALUES ('$date','petrol','$readings1','$stocks1','$testing1','$orders1',0,'unpaid','$enteredBy')");
 		
 		$date = date("Y-m-d");
 		$readings2 = $readings['diesel'];
@@ -18,7 +18,7 @@ class Stocks_model extends CI_Model {
 		$orders2 = $orders['diesel'];
 		$testing1 = $testing['diesel'];
 		$enteredBy = $_SESSION['loggedIn'];
-		$this->db->query("insert into oil_stock_readings VALUES ('$date','diesel','$readings2','$stocks2','$testing1','$orders2','$enteredBy')");	
+		$this->db->query("insert into oil_stock_readings VALUES ('$date','diesel','$readings2','$stocks2','$testing1','$orders2',0,'unpaid','$enteredBy')");	
 	}
 	public function loadHistoryPetrol() {
 		$query = $this->db->query("select * from oil_stock_readings where oil='petrol' AND MONTH(`date`)=MONTH(NOW())");

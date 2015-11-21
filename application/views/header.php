@@ -291,7 +291,7 @@
                             <a href="<?php echo base_url() ?>income"><i class="fa fa-dashboard fa-fw"></i> Income</a>
                         </li>
                         <li>
-                            <a href="stocks"><i class="fa fa-dashboard fa-fw"></i> Expense</a>
+                            <a href="<?php echo base_url() ?>expense"><i class="fa fa-dashboard fa-fw"></i> Expense</a>
                         </li>
                     </ul>
                 </div>

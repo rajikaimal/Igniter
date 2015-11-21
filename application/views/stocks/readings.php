@@ -32,9 +32,10 @@
                                             <td><input type="number" name="testingPetrol" class="form-control" value=""></td>
                                             <td><input type="number" name="stocKPetrol" class="form-control" value="<?php echo $petrolStock; ?>"></td>
                                             <td class="center"><select class="form-control" name="petrolOrder">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
+                                                <option>0</option>
+                                                <option>6600</option>
+                                                <option>13200</option>
+                                                <option>19800</option>
                                             </select></td>
                                         </tr>
                                         <tr class="odd gradeX">
@@ -43,9 +44,10 @@
                                             <td><input type="number" name="testingDiesel" class="form-control" value=""></td>
                                             <td><input type="number" name="stockDiesel" class="form-control" value="<?php echo $dieselStock; ?>"></td>
                                             <td class="center"><select class="form-control" name="dieselOrder">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
+                                                <option>0</option>
+                                                <option>6600</option>
+                                                <option>13200</option>
+                                                <option>19800</option>
                                             </select></td>
                                         </tr>
                                         

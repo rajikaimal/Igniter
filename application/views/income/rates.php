@@ -4,7 +4,7 @@
                     <div class="panel panel-default">
                         <div class="panel-heading">
                             <a href="<?php echo base_url(); ?>income/viewDailySale">View sales of this month </a>
-                            <a href="<?php echo base_url(); ?>income/rates">Set rates </a>
+                            ----- <a href="<?php echo base_url(); ?>income/rates">Set rates </a>
                         </div>
                         <div class="panel-body">
                             <div class="row">

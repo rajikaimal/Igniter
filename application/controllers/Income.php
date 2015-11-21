@@ -9,10 +9,11 @@ class Income extends CI_Controller {
 		if(!isset($_SESSION['loggedIn'])){
             redirect('login','refresh');    
         }
-		$this->load->view('header');
-		$this->load->view('income/row');
-		$this->load->view('income/fuel');
-		$this->load->view('footer');
+        self::dailySale();
+		// $this->load->view('header');
+		// $this->load->view('income/row');
+		// $this->load->view('income/fuel');
+		// $this->load->view('footer');
 	}
 	public function dailySale() {
 		$this->load->view('header');
