@@ -62,16 +62,11 @@ class Income extends CI_Controller {
 			$this->load->view('footer');
 		}
 	}
-	public function payments() {
-		$this->load->model('income_model');
-		if($q = $this->income_model->loadClientList()) {
-			$data['q'] = $q;
-
-			$this->load->view('header');
-			$this->load->view('income/row');
-			$this->load->view('income/payments',$data);
-			$this->load->view('footer');
-		}
+	public function lubricantSale() {
+		$this->load->view('header');
+		$this->load->view('income/row');
+		$this->load->view('income/lubricantSale');
+		$this->load->view('footer');	
 	}
 	public function updateRates() {
 		$petrol = $_POST['petrol'];
@@ -82,59 +77,5 @@ class Income extends CI_Controller {
 			self::rates();
 		}
 	}
-	public function addPayment() {
-		$name = $_POST['name'];
-		$amount = $_POST['amount'];
-		$date = $_POST['date'];
 
-		$this->load->model('income_model');
-		if($q = $this->income_model->addPayment($name,$amount,$date)) {
-			self::unpaidLoans();
-		}		
-	}
-	public function unpaidLoans() {
-		$this->load->model('income_model');
-		if($q = $this->income_model->unpaidLoans()) {
-			$data['q'] = $q;
-
-			$this->load->view('header');
-			$this->load->view('income/row');
-			$this->load->view('income/unpaid',$data);
-			$this->load->view('footer');
-		}	
-	}
-	public function updateStatus() {
-		$id = $_GET['id'];
-		$this->load->model('income_model');
-		if($this->income_model->updateStatus($id)) {
-			redirect('income/summary','refresh');    
-		}
-	}
-	public function updateStatusPay() {
-		$name = $_GET['name'];
-
-		$this->load->model('income_model');
-		if($this->income_model->updateStatusPay($name)) {
-			redirect('income/summary','refresh');    
-		}
-
-	}
-	public function removeLoan() {
-		$id = $_GET['id'];
-		$this->load->model('income_model');
-		if($this->income_model->removeLoan($id)) {
-			redirect('income/unpaidLoans','refresh');    
-		}	
-	}
-	public function summary() {
-		$this->load->model('income_model');
-		if($q = $this->income_model->summary()) {
-			$data['q'] = $q;
-
-			$this->load->view('header');
-			$this->load->view('income/row');
-			$this->load->view('income/summary',$data);
-			$this->load->view('footer');
-		}	
-	}
 }

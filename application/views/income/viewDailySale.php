@@ -18,6 +18,7 @@
                                     </thead>
                                     <tbody>
                                         <?php 
+                                            $sum = 0;
                                            foreach ($dataPetrol->result() as $row):
                                         ?>
                                         <form method="post" action="<?php echo base_url();?>clients/remove">
@@ -26,7 +27,12 @@
                                             <td class="text-center"><?php echo ($row->sales*$petrolRate); ?></td>
                                             <td class="text-center"><?php echo $row->date; ?></td>
                                         </tr>
+                                        <?php $sum = $sum + $row->sales*$petrolRate; ?>
                                         <?php endforeach; ?>
+                                        <tr>
+                                            <td class="text-center"><b>Total</b></td>
+                                            <td class="text-center"><b><?php echo $sum; ?></b></td>
+                                        </tr>
                                     </tbody>
                                 </table>    
                                 </div>
@@ -50,6 +56,7 @@
                                     </thead>
                                     <tbody>
                                         <?php 
+                                            $sum = 0;
                                            foreach ($dataDiesel->result() as $row):
                                         ?>
                                         <form method="post" action="<?php echo base_url();?>clients/remove">
@@ -58,7 +65,12 @@
                                             <td class="text-center"><?php echo ($row->sales*$dieselRate); ?></td>
                                             <td class="text-center"><?php echo $row->date; ?></td>
                                         </tr>
+                                        <?php $sum = $sum + $row->sales*$petrolRate; ?>
                                         <?php endforeach; ?>
+                                        <tr>
+                                            <td class="text-center"><b>Total</b></td>
+                                            <td class="text-center"><b><?php echo $sum; ?></b></td>
+                                        </tr>
                                     </tbody>
                                 </table>    
                                 </div>
