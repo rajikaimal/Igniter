@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 .DS_Store
 
 application/cache/*
@@ -33,4 +32,4 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 */cache/*
 */cache/!index.html
 */cache/!.htaccess
->>>>>>> 19cb27c3c603853596ee211f0f24d13e13354b49
+/node_modules
