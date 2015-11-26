@@ -2,7 +2,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <a href="<?php echo base_url(); ?>stocks/newLubricantStocks"> New stocks </a>
+                            <a href="<?php echo base_url(); ?>stocks/selectLubricant"> New stocks </a>
                         </div>
                         <div class="panel-body">
                             <div class="row">

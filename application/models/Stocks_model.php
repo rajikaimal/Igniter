@@ -40,6 +40,22 @@ class Stocks_model extends CI_Model {
 			return false;
 		}
 	}
+	public function newLubricantStocks($name) {
+		if($query = $this->db->query("select * from lubricants where name='$name'")->row()) {
+			return $query;
+		}
+		else {
+			return false;
+		}
+	}
+	public function updateLubricantStock($name,$amount,$supplier) {
+		if($data = $this->db->query("update lubricants set amount='$amount' where name='$name' AND supplier='$supplier'")) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
 	public function loadHistoryDiesel() {
 		$query = $this->db->query("select * from oil_stock_readings where oil='diesel' AND MONTH(`date`)=MONTH(NOW())");
 		if($query) {
