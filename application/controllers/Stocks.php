@@ -16,13 +16,13 @@ class Stocks extends CI_Controller {
   		//$this->load->view('footer');
   	}
   	public function readings() {
-        $petrol = $_POST['petrol'];
+      $petrol = $_POST['petrol'];
     	$diesel = $_POST['diesel'];
 
-    	$readings['realReadingPetrol'] = 150;
-    	$readings['realReadingDiesel'] = 250;
-    	$readings['petrolStock'] = 100;
-    	$readings['dieselStock'] = 200;
+    	$readings['realReadingPetrol'] = $petrol;
+    	$readings['realReadingDiesel'] = $diesel;
+    	// $readings['petrolStock'] = 100;
+    	// $readings['dieselStock'] = 200;
 
     	$this->load->view('header');    
     	$this->load->view('stocks/readings',$readings);    
@@ -68,9 +68,10 @@ class Stocks extends CI_Controller {
       $this->load->view('footer');
     }
     public function selectLubricant() {
+      $data = self::loadLubricants();
       $this->load->view('header');
       $this->load->view('stocks/row');
-      $this->load->view('stocks/selectLubricant');
+      $this->load->view('stocks/selectLubricant',$data);
       $this->load->view('footer');
     }
     public function newLubricantStocks() {
@@ -108,6 +109,13 @@ class Stocks extends CI_Controller {
         self::viewLubricants();  
       } 
     }
+    public function loadLubricants() {
+      $this->load->model('stocks_model');
+      if($q = $this->stocks_model->loadLubricants()) {
+        $data['q'] = $q;
+        return $data;
+      }
+    }
     public function updateLubricantStock() {
       $name = $_POST['name'];
       $amount = $_POST['amount'];
@@ -118,6 +126,5 @@ class Stocks extends CI_Controller {
       if($this->stocks_model->updateLubricantStock($name,$amount,$supplier)) {
         self::viewLubricants();
       }
-
     }
 }

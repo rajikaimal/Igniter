@@ -9,8 +9,9 @@
                                 <div class="col-lg-6">
                                     <form role="form" method="post" action="<?php echo base_url(); ?>stocks/newLubricantStocks">
                                         <div class="form-group">
-                                            <label>Lubricant</label>
+                                            <label>Lubricant <?php //var_dump($q); ?></label>
                                             <select class="form-control" id="name" type="text" name="name">
+                                                
                                                 <option value="2T">2T</option>
                                                 <option value="octane">Octane</option>
                                             </select>

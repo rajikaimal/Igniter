@@ -20,9 +20,9 @@
                                         <tr>
                                             <th>Oil type</th>
                                             <th>Reading</th>
-                                            <th>Testing</th>
-                                            <th>Current stock</th>
-                                            <th>Order</th>
+                                            <th>Testing (l)</th>
+                                            <th>Current stock (l)</th>
+                                            <th>Order (l)</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -30,7 +30,7 @@
                                             <td>Petrol</td>
                                             <td><input type="number" name="readingPetrol" class="form-control" value="<?php echo $realReadingPetrol; ?>"></td>
                                             <td><input type="number" name="testingPetrol" class="form-control" value=""></td>
-                                            <td><input type="number" name="stocKPetrol" class="form-control" value="<?php echo $petrolStock; ?>"></td>
+                                            <td><input type="number" name="stocKPetrol" class="form-control" value=""></td>
                                             <td class="center"><select class="form-control" name="petrolOrder">
                                                 <option>0</option>
                                                 <option>6600</option>
@@ -42,7 +42,7 @@
                                             <td>Diesel</td>
                                             <td><input type="number" name="readingDiesel" class="form-control" value="<?php echo $realReadingDiesel; ?>"></td>
                                             <td><input type="number" name="testingDiesel" class="form-control" value=""></td>
-                                            <td><input type="number" name="stockDiesel" class="form-control" value="<?php echo $dieselStock; ?>"></td>
+                                            <td><input type="number" name="stockDiesel" class="form-control" value=""></td>
                                             <td class="center"><select class="form-control" name="dieselOrder">
                                                 <option>0</option>
                                                 <option>6600</option>

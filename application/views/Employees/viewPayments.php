@@ -11,8 +11,8 @@
                                     <thead>
                                         <tr>
                                             <th class="text-center">Name</th>
-                                            <th class="text-center"></th>
-                                            <th class="text-center"></th>
+                                            <th class="text-center">Date</th>
+                                            <th class="text-center">Payment</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -20,13 +20,12 @@
                                            foreach ($q->result() as $row):
                                         ?>
                                         <tr class="odd gradeX">
-                                            <td class="text-center"><?php echo $row->name; ?></td>
-                                            <td class="text-center"><a class="btn btn-success" href="<?php echo base_url();?>employees/setAttendancePresent?name=<?php echo $row->name; ?>">Present</a></td>
-                                            <td class="text-center"><a class="btn btn-danger" href="<?php echo base_url();?>employees/setAttendanceAbsent?name=<?php echo $row->name; ?>">Absent</a></td>
+                                            <td class="text-center"><?php echo $row->emp_name; ?></td>
+                                            <td class="text-center"><?php echo $row->date; ?></td>
+                                            <td class="text-center"><?php echo $row->amount; ?></td>
                                         </tr>
                                         <?php endforeach; ?>
                                     </tbody>
-                                    <?php var_dump($q1); ?>
                                 </table>    
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->

@@ -78,7 +78,15 @@ class Employees_model extends CI_Model {
 		}
 		else{
 			return false;
-		}	
+		}
+	}
+	public function checkAttendance() {
+		if($data = $this->db->query("select * from attendance where date=Date(`date`)")) {
+			return $data; 
+		}
+		else{
+			return false;
+		}
 	}
 	public function removeLoan($id) {
 		if($this->db->query("delete from client_loans where id='$id'")) {
@@ -91,6 +99,15 @@ class Employees_model extends CI_Model {
 	public function summary() {
 		if($data = $this->db->query("select id,name,date,(SUM(amount)) as amount,status from client_loans where MONTH(`Date`)=MONTH(NOW()) 
 			and YEAR(`Date`)=YEAR(NOW()) group by name")) {
+			return $data;
+		}
+		else{
+			return false;
+		}	
+	}
+	public function loadEmployeePayments() {
+		if($data = $this->db->query("select * from employee_payments where MONTH(`Date`)=MONTH(NOW()) 
+			and YEAR(`Date`)=YEAR(NOW())")) {
 			return $data;
 		}
 		else{

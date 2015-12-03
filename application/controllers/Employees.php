@@ -71,7 +71,10 @@ class Employees extends CI_Controller {
 	public function attendance() {
 		$this->load->model('employees_model');
         if($q = $this->employees_model->loadEmployeeDetails()) {
+        	$q1 = $this->employees_model->checkAttendance();
+
         	$data['q'] = $q;
+        	$data['q1'] = $q1;
         	
         	$this->load->view('header');
 			$this->load->view('Employees/row');
@@ -117,6 +120,17 @@ class Employees extends CI_Controller {
 			$this->load->view('Employees/payments',$data);
 			$this->load->view('footer');
         }
+	}
+	public function viewPayments() {
+		$this->load->model('employees_model');
+        if($q = $this->employees_model->loadEmployeePayments()) {
+        	$data['q'] = $q;
+        	
+        	$this->load->view('header');
+			$this->load->view('Employees/row');
+			$this->load->view('Employees/viewPayments',$data);
+			$this->load->view('footer');
+        }	
 	}
 	public function addPayment() {
 		$name = $_POST['name'];
