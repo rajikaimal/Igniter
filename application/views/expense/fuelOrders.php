@@ -10,7 +10,7 @@
                                     <form role="form" method="post" action="<?php echo base_url(); ?>expense/addFuelOrderPayment">
                                         <div class="form-group">
                                             <label>Fuel type</label>
-                                            <select class="form-control" id="name" type="text" name="fuel">
+                                            <select class="form-control" id="type" type="text" name="fuel">
                                                 <option value="petrol">Petrol</option>
                                                 <option value="diesel">Diesel</option>
                                             </select>
@@ -42,9 +42,9 @@
 
         <script type="text/javascript">
             function checkFields() {
-                var petrol = document.getElementById('petrol').value;
-                var diesel = document.getElementById('diesel').value;
-                if(petrol == "" || diesel == "") {
+                var type = document.getElementById('type').value;
+                var date = document.getElementById('date').value;
+                if(type == "" || date == "") {
                     document.getElementById('message').innerHTML = "Please fill all fields";
                     return false;
                 }

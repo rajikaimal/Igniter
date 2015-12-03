@@ -48,9 +48,10 @@
 
         <script type="text/javascript">
             function checkFields() {
-                var petrol = document.getElementById('petrol').value;
-                var diesel = document.getElementById('diesel').value;
-                if(petrol == "" || diesel == "") {
+                var name = document.getElementById('name').value;
+                var amount = document.getElementById('amount').value;
+                var date = document.getElementById('date').value;
+                if(name == "" || amount == "" || date == "") {
                     document.getElementById('message').innerHTML = "Please fill all fields";
                     return false;
                 }
