@@ -1,0 +1,15 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "bower_components/bootstrap/package.json",
+        "bower_components/flot/package.json",
+        "bower_components/holderjs/package.json",
+        "bower_components/material-design-lite/package.json",
+        "bower_components/metisMenu/package.json",
+        "bower_components/morrisjs/package.json",
+        "package.json"
+      ]
+    }
+  }
+}
